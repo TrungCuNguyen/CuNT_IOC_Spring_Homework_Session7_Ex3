@@ -22,12 +22,20 @@ public class Candidate {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
+    @Column(nullable = false)
     private String fullName;
 
+    @Column(nullable = false)
     private String email;
 
+    @Column(nullable = false)
     private Integer age;
 
+    @Column(nullable = false)
     private Integer yearsOfExperience;
+
+    private String address;
+
+    @Column(length = 200)
+    private String bio;
 }
