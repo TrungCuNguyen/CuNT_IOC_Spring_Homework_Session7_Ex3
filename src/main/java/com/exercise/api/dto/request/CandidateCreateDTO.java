@@ -11,19 +11,19 @@ import lombok.Setter;
 @Getter
 @Setter
 public class CandidateCreateDTO {
-    @NotBlank(message = "Tên không được để trống")
-    @Size(min = 5, max = 50)
+    @NotBlank(message = "Full Name cannot be empty")
+    @Size(min = 5, max = 50, message = "Full Name must be between 5 and 50 characters")
     private String fullName;
 
-    @NotBlank(message = "Email không được để trống")
-    @Email(message = "Dữ liệu không hợp lệ")
+    @NotBlank(message = "Email cannot be empty")
+    @Email(message = "Invalid email format")
     private String email;
 
-    @NotNull(message = "Tuổi không được để trống")
-    @Min(value = 18, message = "Tuổi phải từ 18 trở lên")
+    @NotNull(message = "Age cannot be null")
+    @Min(value = 18, message = "Age must be at least 18")
     private Integer age;
 
-    @NotNull(message = "Năm kinh nghiệm không được để trống")
-    @Min(value = 0, message = "Năm kinh nghiệm không được nhỏ hơn 0")
+    @NotNull(message = "Years of experience cannot be null")
+    @Min(value = 0, message = "Years of experience must be >= 0")
     private Integer yearsOfExperience;
 }
